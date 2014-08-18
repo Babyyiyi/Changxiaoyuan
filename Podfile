@@ -1,0 +1,6 @@
+platform:ios, '7.0'
+pod 'MMDrawerController', '~> 0.5.6'
+pod 'IQKeyboardManager'
+pod 'AFNetworking', '~>2.0'
+pod 'Chameleon'
+pod 'UAProgressView'
