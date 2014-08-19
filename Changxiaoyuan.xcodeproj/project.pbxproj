@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A39B59619A35911003602C1 /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A39B59419A35911003602C1 /* NSString+FontAwesome.m */; };
+		3A39B59719A35911003602C1 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A39B59519A35911003602C1 /* FontAwesome.ttf */; };
 		3A41E710198B3169002D4FE0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A41E70F198B3169002D4FE0 /* Foundation.framework */; };
 		3A41E712198B3169002D4FE0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A41E711198B3169002D4FE0 /* CoreGraphics.framework */; };
 		3A41E714198B3169002D4FE0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A41E713198B3169002D4FE0 /* UIKit.framework */; };
@@ -71,6 +73,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3A39B59319A35911003602C1 /* NSString+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FontAwesome.h"; sourceTree = "<group>"; };
+		3A39B59419A35911003602C1 /* NSString+FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FontAwesome.m"; sourceTree = "<group>"; };
+		3A39B59519A35911003602C1 /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
 		3A41E70C198B3169002D4FE0 /* Changxiaoyuan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Changxiaoyuan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A41E70F198B3169002D4FE0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3A41E711198B3169002D4FE0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -221,6 +226,8 @@
 				3A41E74D198B7CF1002D4FE0 /* Function */,
 				3A41E747198B69F2002D4FE0 /* LeftViewController.h */,
 				3A41E748198B69F2002D4FE0 /* LeftViewController.m */,
+				3A39B59319A35911003602C1 /* NSString+FontAwesome.h */,
+				3A39B59419A35911003602C1 /* NSString+FontAwesome.m */,
 				3A41E74A198B6DF7002D4FE0 /* LeftTableViewController.h */,
 				3A41E74B198B6DF7002D4FE0 /* LeftTableViewController.m */,
 				3A41E727198B3169002D4FE0 /* Images.xcassets */,
@@ -232,6 +239,7 @@
 		3A41E716198B3169002D4FE0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3A39B59519A35911003602C1 /* FontAwesome.ttf */,
 				3AD44674199AE6F70065E3A8 /* image */,
 				3A4799E6198F897C000DC198 /* Third Open Source */,
 				3A41E717198B3169002D4FE0 /* Changxiaoyuan-Info.plist */,
@@ -471,6 +479,7 @@
 				3AD44684199B0D030065E3A8 /* 3.png in Resources */,
 				3A41E71A198B3169002D4FE0 /* InfoPlist.strings in Resources */,
 				3A479A301990BE82000DC198 /* BookTableViewCell.xib in Resources */,
+				3A39B59719A35911003602C1 /* FontAwesome.ttf in Resources */,
 				3A6F4FB8199DBA3000C91BBB /* signup.png in Resources */,
 				3A479A451992F8D0000DC198 /* SearchDetailViewController.xib in Resources */,
 				3AD446A5199C777F0065E3A8 /* title1.png in Resources */,
@@ -535,6 +544,7 @@
 				3AD44694199C58770065E3A8 /* ViewController.m in Sources */,
 				3A479A19198F89C1000DC198 /* MJRefreshHeaderView.m in Sources */,
 				3A479A1A198F89C1000DC198 /* UIScrollView+Extension.m in Sources */,
+				3A39B59619A35911003602C1 /* NSString+FontAwesome.m in Sources */,
 				3A479A481993045E000DC198 /* Detail.m in Sources */,
 				3A8492AF198C60300061A6FD /* NoClassTableViewController.m in Sources */,
 				3A92A586198F33C7001801BC /* SettingTableViewController.m in Sources */,

@@ -29,7 +29,7 @@
     self.drawerController = [[MMDrawerController alloc] initWithCenterViewController:navigationController
                                                             leftDrawerViewController:leftDrawer];
 
-    [self.drawerController setMaximumLeftDrawerWidth:280.0];
+    [self.drawerController setMaximumLeftDrawerWidth:200.0];
     [self.drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
     [self.drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
     [self.drawerController setShowsStatusBarBackgroundView:YES];

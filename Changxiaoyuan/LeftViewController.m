@@ -6,6 +6,7 @@
 //
 //
 #import <UIViewController+MMDrawerController.h>
+#import "NSString+FontAwesome.h"
 
 #import "LeftViewController.h"
 #import "LoginViewController.h"
@@ -75,30 +76,38 @@
                                       reuseIdentifier:CellIdentifier];
         [cell setSelectionStyle:UITableViewCellSelectionStyleBlue];
     }
+    cell.textLabel.font = [UIFont fontWithName:kFontAwesomeFamilyName size:17.0];
+    [cell setAccessoryType:UITableViewCellAccessoryNone];
     
     switch (indexPath.section) {
         case Profile:
             if (indexPath.row == 0) {
-                [cell.textLabel setText:@"个人资料"];
+                NSString *str = [NSString fontAwesomeIconStringForEnum:FAUser];
+                cell.textLabel.text = [str stringByAppendingString:@"  个人中心"];
             }else{
-                [cell.textLabel setText:@"修改密码"];
+                NSString *str = [NSString fontAwesomeIconStringForEnum:FAPencil];
+                cell.textLabel.text = [str stringByAppendingString:@"  修改密码"];
             }
-            [cell setAccessoryType:UITableViewCellAccessoryNone];
             break;
         case Function:
             if (indexPath.row == 0) {
-                [cell.textLabel setText:@"图书查询"];
+                NSString *str = [NSString fontAwesomeIconStringForEnum:FASearch];
+                cell.textLabel.text = [str stringByAppendingString:@"  图书查询"];
             }else if (indexPath.row == 1){
-                [cell.textLabel setText:@"图书续借"];
+                NSString *str = [NSString fontAwesomeIconStringForEnum:FABook];
+                cell.textLabel.text = [str stringByAppendingString:@"  图书续借"];
             }else if (indexPath.row == 2){
-                [cell.textLabel setText:@"课程表"];
+                NSString *str = [NSString fontAwesomeIconStringForEnum:FABell];
+                cell.textLabel.text = [str stringByAppendingString:@"  课程表"];
             }else{
-                [cell.textLabel setText:@"无课教室"];
+                NSString *str = [NSString fontAwesomeIconStringForEnum:FAbuilding];
+                cell.textLabel.text = [str stringByAppendingString:@"  无课教室"];
             }
-            [cell setAccessoryType:UITableViewCellAccessoryNone];
             break;
-        case Setting:
-            [cell.textLabel setText:@"个性化"];
+        case Setting:{
+            NSString *str = [NSString fontAwesomeIconStringForEnum:FAWrench];
+            cell.textLabel.text = [str stringByAppendingString:@"  个性化"];
+        }
         default:
             break;
     }
