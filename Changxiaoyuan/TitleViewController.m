@@ -14,14 +14,6 @@
 
 @implementation TitleViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 - (void)loadView
 {
     self.view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];

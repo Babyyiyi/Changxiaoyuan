@@ -14,6 +14,7 @@
     NSInteger width;
     NSInteger hight;
 }
+
 @property (strong, nonatomic) NSTimer *timer;
 
 @end
@@ -25,13 +26,13 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        width=self.view.bounds.size.width;
-        hight=self.view.bounds.size.height;
-        scrollview=[[UIScrollView alloc] initWithFrame:CGRectMake(0, 44, width, 240)];
+        width = self.view.bounds.size.width;
+        hight = self.view.bounds.size.height;
+        scrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 44, width, 240)];
         [scrollview setDelegate:self];
-        for (int i=1; i<4; i++) {
-            NSString *fileName=[NSString stringWithFormat:@"%d.png",i];
-            UIImageView *imageView=[[UIImageView alloc] initWithImage:[UIImage imageNamed:fileName]];
+        for (int i = 1;i < 4;i++) {
+            NSString *fileName = [NSString stringWithFormat:@"%d.png",i];
+            UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:fileName]];
             [imageView setFrame:CGRectMake((i-1)*width, 0, width, 240)];
             [scrollview  addSubview:imageView];
         }

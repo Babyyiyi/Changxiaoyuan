@@ -35,6 +35,7 @@
     CGRect f = _view.frame;
     f.size.width = _tableView.frame.size.width;
     _view.frame = f;
+    NSLog(@"%f",f.origin.y);
     
     if (scrollView.contentOffset.y < 0) {
         CGFloat offsetY = (scrollView.contentOffset.y + scrollView.contentInset.top) * -1;
