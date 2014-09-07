@@ -10,16 +10,4 @@
 
 @implementation Detail
 
-//- (id)copyWithZone:(NSZone *)zone
-//{
-//    Detail *newDetail = [[Detail allocWithZone:zone] init];
-//    newDetail.bookname = self.bookname;
-//    newDetail.detailid = self.detailid;
-//    newDetail.changan = self.changan;
-//    newDetail.yanta = self.yanta;
-//    newDetail.dblink = self.dblink;
-//    newDetail.resume = self.resume;
-//    newDetail.imageArray = self.imageArray;
-//    return newDetail;
-//}
 @end

@@ -163,7 +163,9 @@
         case Function:{
             if (indexPath.row == 0) {
                 SearchTableViewController *searchTableViewController = [[SearchTableViewController alloc] init];
-                [self.mm_drawerController setCenterViewController:searchTableViewController
+                UINavigationController *sNavigationController = [[UINavigationController alloc] initWithRootViewController:searchTableViewController];
+                [sNavigationController setNavigationBarHidden:YES animated:YES];
+                [self.mm_drawerController setCenterViewController:sNavigationController
                                                withCloseAnimation:YES
                                                        completion:nil];
             }else if (indexPath.row == 1){

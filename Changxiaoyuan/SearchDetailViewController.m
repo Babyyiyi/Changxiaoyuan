@@ -26,25 +26,30 @@
     return self;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    self.navigationController.navigationItem.backBarButtonItem.title = @"返回";
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self.delegate setValue:_detail];
     
-    UINavigationBar *navigationBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
-    UINavigationItem *navigationItem = [[UINavigationItem alloc] initWithTitle:_detail.bookname];
-    UIBarButtonItem *barButtonItemleft = [[UIBarButtonItem alloc] initWithTitle:@"返回"
-                                                                          style:UIBarButtonItemStyleBordered
-                                                                         target:self
-                                                                         action:@selector(backSearchTable)];
-//    UIBarButtonItem *barButtonItemRight = [[UIBarButtonItem alloc] initWithTitle:@"豆瓣"
-//                                                                           style:UIBarButtonItemStyleBordered
-//                                                                          target:self
-//                                                                          action:@selector(doubanbooks)];
-    navigationItem.leftBarButtonItem = barButtonItemleft;
-//    navigationItem.rightBarButtonItem = barButtonItemRight;
-    navigationBar.items = @[navigationItem];
-    [self.view addSubview:navigationBar];
+//    UINavigationBar *navigationBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+//    UINavigationItem *navigationItem = [[UINavigationItem alloc] initWithTitle:_detail.bookname];
+//    UIBarButtonItem *barButtonItemleft = [[UIBarButtonItem alloc] initWithTitle:@"返回"
+//                                                                          style:UIBarButtonItemStyleBordered
+//                                                                         target:self
+//                                                                         action:@selector(backSearchTable)];
+////    UIBarButtonItem *barButtonItemRight = [[UIBarButtonItem alloc] initWithTitle:@"豆瓣"
+////                                                                           style:UIBarButtonItemStyleBordered
+////                                                                          target:self
+////                                                                          action:@selector(doubanbooks)];
+//    navigationItem.leftBarButtonItem = barButtonItemleft;
+////    navigationItem.rightBarButtonItem = barButtonItemRight;
+//    navigationBar.items = @[navigationItem];
+//    [self.view addSubview:navigationBar];
     
     _detailid.text = _detail.detailid;
     NSString *all = [[NSString alloc] init];
@@ -61,10 +66,10 @@
     shuku = [_detail.yanta objectForKey:@"shuku"];
     _yanta.text = [NSString stringWithFormat:@"总数%@,可借%@,书库%@",all,on,shuku];
 
-    if ((BOOL)_detail.resume) {
-        _resume.text = [_detail.resume objectForKey:@"$t"];
-    }else{
+    if (!_detail.resume) {
         _resume.text = @"暂无简介";
+    }else{
+        _resume.text = [_detail.resume objectForKey:@"$t"];
     }
     
     NSString *urlString = [_detail.imageArray objectForKey:@"@href"];
@@ -77,12 +82,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)backSearchTable
-{
-    [self.mm_drawerController setCenterViewController:[[SearchTableViewController alloc] init]
-                                   withCloseAnimation:YES completion:nil];
 }
 
 - (void)doubanbooks

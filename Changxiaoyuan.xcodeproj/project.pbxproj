@@ -36,8 +36,6 @@
 		3A479A1A198F89C1000DC198 /* UIScrollView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A479A10198F89C1000DC198 /* UIScrollView+Extension.m */; };
 		3A479A1B198F89C1000DC198 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A479A12198F89C1000DC198 /* UIScrollView+MJRefresh.m */; };
 		3A479A1C198F89C1000DC198 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A479A14198F89C1000DC198 /* UIView+Extension.m */; };
-		3A479A2F1990BE82000DC198 /* BookTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A479A2D1990BE82000DC198 /* BookTableViewCell.m */; };
-		3A479A301990BE82000DC198 /* BookTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A479A2E1990BE82000DC198 /* BookTableViewCell.xib */; };
 		3A479A36199123DE000DC198 /* SearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A479A35199123DE000DC198 /* SearchTableViewController.m */; };
 		3A479A3A1991C2B3000DC198 /* UserinfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A479A381991C2B3000DC198 /* UserinfoViewController.m */; };
 		3A479A3B1991C2B3000DC198 /* UserinfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A479A391991C2B3000DC198 /* UserinfoViewController.xib */; };
@@ -120,9 +118,6 @@
 		3A479A12198F89C1000DC198 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		3A479A13198F89C1000DC198 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		3A479A14198F89C1000DC198 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
-		3A479A2C1990BE82000DC198 /* BookTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookTableViewCell.h; sourceTree = "<group>"; };
-		3A479A2D1990BE82000DC198 /* BookTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookTableViewCell.m; sourceTree = "<group>"; };
-		3A479A2E1990BE82000DC198 /* BookTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookTableViewCell.xib; sourceTree = "<group>"; };
 		3A479A34199123DE000DC198 /* SearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTableViewController.h; sourceTree = "<group>"; };
 		3A479A35199123DE000DC198 /* SearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewController.m; sourceTree = "<group>"; };
 		3A479A371991C2B3000DC198 /* UserinfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserinfoViewController.h; sourceTree = "<group>"; };
@@ -309,9 +304,6 @@
 				3A8492AB198C601E0061A6FD /* SyllabusTableViewController.m */,
 				3A8492AD198C60300061A6FD /* NoClassTableViewController.h */,
 				3A8492AE198C60300061A6FD /* NoClassTableViewController.m */,
-				3A479A2C1990BE82000DC198 /* BookTableViewCell.h */,
-				3A479A2D1990BE82000DC198 /* BookTableViewCell.m */,
-				3A479A2E1990BE82000DC198 /* BookTableViewCell.xib */,
 				3A479A4919930F41000DC198 /* Base.h */,
 				3A479A4A19930F41000DC198 /* Base.m */,
 				3A479A461993045E000DC198 /* Detail.h */,
@@ -478,7 +470,6 @@
 				3A479A3B1991C2B3000DC198 /* UserinfoViewController.xib in Resources */,
 				3AD44684199B0D030065E3A8 /* 3.png in Resources */,
 				3A41E71A198B3169002D4FE0 /* InfoPlist.strings in Resources */,
-				3A479A301990BE82000DC198 /* BookTableViewCell.xib in Resources */,
 				3A39B59719A35911003602C1 /* FontAwesome.ttf in Resources */,
 				3A6F4FB8199DBA3000C91BBB /* signup.png in Resources */,
 				3A479A451992F8D0000DC198 /* SearchDetailViewController.xib in Resources */,
@@ -560,7 +551,6 @@
 				3A41E749198B69F2002D4FE0 /* LeftViewController.m in Sources */,
 				3A41E720198B3169002D4FE0 /* AppDelegate.m in Sources */,
 				3A41E71C198B3169002D4FE0 /* main.m in Sources */,
-				3A479A2F1990BE82000DC198 /* BookTableViewCell.m in Sources */,
 				3A479A17198F89C1000DC198 /* MJRefreshConst.m in Sources */,
 				3AD4467C199B0A750065E3A8 /* DisplayViewController.m in Sources */,
 			);

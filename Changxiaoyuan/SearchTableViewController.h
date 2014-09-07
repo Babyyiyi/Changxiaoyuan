@@ -16,8 +16,8 @@
 @property (strong, nonatomic) UISearchBar *searchBar;
 @property (strong, nonatomic) Base *base;
 @property (strong, nonatomic) Detail *detail;
-@property (strong, nonatomic) NSArray *array;
-@property (strong, nonatomic) NSArray *data;
+@property (strong, nonatomic) NSArray *resultBookArray;
+@property (strong, nonatomic) NSArray *resultBookData;
 @property (strong, nonatomic) NSDictionary *dic;
 @property (strong, nonatomic) NSString *keyword;
 

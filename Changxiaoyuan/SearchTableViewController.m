@@ -13,7 +13,6 @@
 @interface SearchTableViewController ()
 
 @property (strong, nonatomic) UIActivityIndicatorView *activity;
-
 @property (strong, nonatomic) SearchDetailViewController *searchDetailViewController;
 
 @end
@@ -26,10 +25,14 @@ static NSInteger refreshcount = 1;
 {
     self = [super initWithStyle:style];
     if (self) {
+        
     }
     return self;
 }
-
+- (void)viewWillAppear:(BOOL)animated
+{
+    self.navigationController.navigationBarHidden = YES;
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -43,17 +46,16 @@ static NSInteger refreshcount = 1;
     [_searchBar becomeFirstResponder];
 }
 
-
 #pragma mark - TableView data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _array.count;
+    return _resultBookArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDictionary *rowData = [_array objectAtIndex:indexPath.row];
+    NSDictionary *rowData = [_resultBookArray objectAtIndex:indexPath.row];
     _base = [[Base alloc] init];
     _base.title = [rowData objectForKey:@"title"];
     _base.author = [rowData objectForKey:@"author"];
@@ -84,7 +86,7 @@ static NSInteger refreshcount = 1;
     
     _searchDetailViewController = [[SearchDetailViewController alloc] init];
     
-    NSDictionary *rowData = [_array objectAtIndex:indexPath.row];
+    NSDictionary *rowData = [_resultBookArray objectAtIndex:indexPath.row];
     NSString *isbn = [rowData objectForKey:@"isbn"];
     NSString *detail = [rowData objectForKey:@"detail"];
     NSString *urlString = [NSString stringWithFormat:@"http://xiyou.changxiaoyuan.com/api/?callback=&ctrlid=%@&do=querydetail&isbn=%@&appkey=4107762472",detail,isbn];
@@ -107,10 +109,11 @@ static NSInteger refreshcount = 1;
         _searchDetailViewController.delegate = self;
         _searchDetailViewController.detail = self.detail;
         
-        [self.mm_drawerController setCenterViewController:_searchDetailViewController
-                                       withCloseAnimation:YES completion:nil];
+        [self.navigationController pushViewController:_searchDetailViewController animated:YES];
+        [self.navigationController setNavigationBarHidden:NO animated:YES];
         [_activity stopAnimating];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@",error);
     }];
     [[NSOperationQueue mainQueue] addOperation:op];
 }
@@ -136,8 +139,7 @@ static NSInteger refreshcount = 1;
     [self.view addSubview:_activity];
     [_activity startAnimating];
     
-    _keyword = searchBar.text;
-    _keyword = [_keyword stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    _keyword = [searchBar.text stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     _detail.keyword = _keyword;
     
     NSString *urlString = [NSString stringWithFormat:@"http://xiyou.changxiaoyuan.com/api/?callback=&w=%@&do=querybook&appkey=4107762472",_keyword];
@@ -148,10 +150,12 @@ static NSInteger refreshcount = 1;
     op.responseSerializer = [AFJSONResponseSerializer serializer];
     [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSDictionary *dic = (NSDictionary *)responseObject;
-        _array = [dic objectForKey:@"result"];
+        _resultBookArray = [dic objectForKey:@"result"];
+        
         [self.tableView reloadData];
         [_activity stopAnimating];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@",error);
     }];
     [[NSOperationQueue mainQueue] addOperation:op];
     searchBar.showsCancelButton = NO;
@@ -172,12 +176,13 @@ static NSInteger refreshcount = 1;
     op.responseSerializer = [AFJSONResponseSerializer serializer];
     [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         _dic = (NSDictionary *)responseObject;
-        _data = [_dic objectForKey:@"result"];
-        _array = [_array arrayByAddingObjectsFromArray:_data];
+        _resultBookData = [_dic objectForKey:@"result"];
+        _resultBookArray = [_resultBookArray arrayByAddingObjectsFromArray:_resultBookData];
         
         [self.tableView reloadData];
         [self.tableView footerEndRefreshing];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@",error);
     }];
     [[NSOperationQueue mainQueue] addOperation:op];
 }
