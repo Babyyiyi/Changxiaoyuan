@@ -66,10 +66,10 @@
     shuku = [_detail.yanta objectForKey:@"shuku"];
     _yanta.text = [NSString stringWithFormat:@"总数%@,可借%@,书库%@",all,on,shuku];
 
-    if (!_detail.resume) {
-        _resume.text = @"暂无简介";
-    }else{
+    if ((NSNull *)_detail.resume != [NSNull null]) {
         _resume.text = [_detail.resume objectForKey:@"$t"];
+    }else{
+        _resume.text = @"暂无简介";
     }
     
     NSString *urlString = [_detail.imageArray objectForKey:@"@href"];
